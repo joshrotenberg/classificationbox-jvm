@@ -10,6 +10,10 @@ maven artifact coming soon
 
 ### Usage 
 
+#### Run Classificationbox
+
+It's easy! [Sign up][3] and you can run the box locally with docker in just a few minutes!
+
 #### Create a new client and create a model
 ```java
 // create a client. by default, the client points to localhost:8080 without basic authentication
@@ -46,3 +50,4 @@ Response<TeachModelResponse> response = getClient().service().teachModel("sentim
 [0]: https://machinebox.io/
 [1]: https://machinebox.io/docs/classificationbox
 [2]: https://square.github.io/retrofit/
+[3]: https://machinebox.io/login?return_url=%2Faccount
