@@ -1,6 +1,6 @@
 # classificationbox-java
 
-[Machine Box](0) [Classificationbox](1) Client Library in Java (using [Retrofit2](2))
+[Machine Box][0] [Classificationbox][1] Client Library in Java (using [Retrofit2][2])
 
 ### Installation
 
