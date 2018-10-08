@@ -8,6 +8,16 @@
 maven artifact coming soon
 ```
 
+### Overview
+
+`classificationbox-java` is a Java/JVM client binding for Classificationbox using Retrofit. It is overall a fairly
+low level implementation, meaning that it essentially exposes all of the available REST API endpoints as methods 
+with POJO request/response classes where appropriate and otherwise stays out of your way. 
+
+This implementation grew out of small personal project and is not sponsored or supported directly by Machine Box. 
+
+Issues, pull requests, and suggestions are encouraged and appreciated.
+
 ### Usage 
 
 #### Run Classificationbox
@@ -47,6 +57,8 @@ Response<TeachModelResponse> response = getClient().service().teachModel("sentim
 
 ```
 
+See the [integration tests](src/test/java/integration) for more examples.
+
 ### TODO
 
 - [ ] Test error cases 
@@ -56,6 +68,14 @@ Response<TeachModelResponse> response = getClient().service().teachModel("sentim
 - [ ] Handle alternate state upload methods 
 - [ ] CI/CD
 - [ ] Small sample application
+
+### License
+
+MIT License
+
+Copyright (c) 2018 josh rotenberg
+
+Please see the [LICENSE](LICENSE) for more information.
 
 [0]: https://machinebox.io/
 [1]: https://machinebox.io/docs/classificationbox
