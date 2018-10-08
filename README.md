@@ -47,6 +47,16 @@ Response<TeachModelResponse> response = getClient().service().teachModel("sentim
 
 ```
 
+### TODO
+
+- [ ] Test error cases 
+- [ ] Test Request/Response POJOs
+- [ ] Document Request/Response POJOs
+- [ ] Handle `/info`, `/healthz`, `/liveness`, `/readyz` endpoints
+- [ ] Handle alternate state upload methods 
+- [ ] CI/CD
+- [ ] Small sample application
+
 [0]: https://machinebox.io/
 [1]: https://machinebox.io/docs/classificationbox
 [2]: https://square.github.io/retrofit/
