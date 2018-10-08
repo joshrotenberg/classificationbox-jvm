@@ -52,7 +52,7 @@ Response<TeachModelResponse> response = getClient().service().teachModel("sentim
 - [ ] Test error cases 
 - [ ] Test Request/Response POJOs
 - [ ] Document Request/Response POJOs
-- [ ] Handle `/info`, `/healthz`, `/liveness`, `/readyz` endpoints
+- [x] Handle `/info`, `/healthz`, `/liveness`, `/readyz` endpoints
 - [ ] Handle alternate state upload methods 
 - [ ] CI/CD
 - [ ] Small sample application

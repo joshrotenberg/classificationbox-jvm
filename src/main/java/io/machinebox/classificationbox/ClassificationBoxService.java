@@ -117,6 +117,38 @@ public interface ClassificationBoxService {
     @Multipart
     @POST("classificationbox/state")
     Call<UploadStateResponse> uploadState(@Part MultipartBody.Part file);
-    // TODO: handle model state upload
 
+    // TODO: handle other model state upload options
+
+    /**
+     * Get information about the box.
+     *
+     * @return {@link InfoResponse}
+     */
+    @GET("info")
+    Call<InfoResponse> info();
+
+    /**
+     * Get health information about the box.
+     *
+     * @return {@link HealthzResponse}
+     */
+    @GET("healthz")
+    Call<HealthzResponse> healthz();
+
+    /**
+     * Get liveness information about the box.
+     *
+     * @return {@link ResponseBody}
+     */
+    @GET("liveness")
+    Call<ResponseBody> liveness();
+
+    /**
+     * Get readiness information about the box.
+     *
+     * @return {@link ResponseBody}
+     */
+    @GET("readyz")
+    Call<ResponseBody> readyz();
 }
