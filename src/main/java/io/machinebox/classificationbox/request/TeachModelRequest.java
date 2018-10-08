@@ -31,5 +31,11 @@ public class TeachModelRequest {
         return this;
     }
 
-
+    @Override
+    public String toString() {
+        return "TeachModelRequest{" +
+                "clazz='" + clazz + '\'' +
+                ", inputs=" + inputs +
+                '}';
+    }
 }

@@ -10,9 +10,7 @@ import java.util.Arrays;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsMapContaining.hasEntry;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class GetModelIntegrationTest extends AbstractIntegrationTest {
@@ -26,7 +24,7 @@ public class GetModelIntegrationTest extends AbstractIntegrationTest {
         assertEquals(TEST_MODEL_NAME, response.body().getName());
         assertThat(response.body().getOptions(), hasEntry(ModelOption.NGRAMS, 1));
         assertThat(response.body().getOptions(), hasEntry(ModelOption.SKIPGRAMS, 1));
-        assertTrue(response.body().getClasses().containsAll(Arrays.asList("class1", "class2", "class3")));
+        assertTrue(response.body().getClasses().containsAll(Arrays.asList(TEST_MODEL_CLASS1, TEST_MODEL_CLASS2, TEST_MODEL_CLASS3)));
         assertFalse(response.body().getPredictOnly());
     }
 }

@@ -19,7 +19,7 @@ public class TeachModelIntegrationTest extends AbstractIntegrationTest {
     @Test
     public void testTeachModel() throws IOException {
 
-        TeachModelRequest tmr = new TeachModelRequest("class1");
+        TeachModelRequest tmr = new TeachModelRequest(TEST_MODEL_CLASS1);
         tmr.addInput(new ModelInput("user_age", FeatureType.NUMBER, "25"));
         tmr.addInput(new ModelInput("user_interest", FeatureType.LIST, "music,cooking,ml"));
         tmr.addInput(new ModelInput("user_location", FeatureType.KEYWORD, "London"));
@@ -34,12 +34,12 @@ public class TeachModelIntegrationTest extends AbstractIntegrationTest {
 
         TeachModelMultiRequest tmmr = new TeachModelMultiRequest();
 
-        TeachModelMultiRequest.Example e1 = new TeachModelMultiRequest.Example("class1");
+        TeachModelMultiRequest.Example e1 = new TeachModelMultiRequest.Example(TEST_MODEL_CLASS1);
         e1.addInput(new ModelInput("user_age", FeatureType.NUMBER, "25"));
 
         tmmr.addExample(e1);
 
-        TeachModelMultiRequest.Example e2 = new TeachModelMultiRequest.Example("class1");
+        TeachModelMultiRequest.Example e2 = new TeachModelMultiRequest.Example(TEST_MODEL_CLASS1);
         e2.addInput(new ModelInput("user_age", FeatureType.NUMBER, "55"));
 
         tmmr.addExample(e1);

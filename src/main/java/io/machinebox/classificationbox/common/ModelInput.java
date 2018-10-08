@@ -11,4 +11,13 @@ public class ModelInput {
         this.type = type;
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return "ModelInput{" +
+                "key='" + key + '\'' +
+                ", type=" + type +
+                ", value='" + value + '\'' +
+                '}';
+    }
 }

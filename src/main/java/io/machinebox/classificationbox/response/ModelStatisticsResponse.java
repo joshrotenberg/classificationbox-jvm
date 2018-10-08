@@ -37,4 +37,13 @@ public class ModelStatisticsResponse {
     public List<Clazz> getClasses() {
         return classes;
     }
+
+    @Override
+    public String toString() {
+        return "ModelStatisticsResponse{" +
+                "predictions=" + predictions +
+                ", examples=" + examples +
+                ", classes=" + classes +
+                '}';
+    }
 }

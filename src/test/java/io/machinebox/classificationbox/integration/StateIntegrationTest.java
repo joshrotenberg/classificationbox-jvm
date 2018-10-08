@@ -1,9 +1,6 @@
 package io.machinebox.classificationbox.integration;
 
-import io.machinebox.classificationbox.ClassificationBoxClient;
 import io.machinebox.classificationbox.common.ModelOption;
-import io.machinebox.classificationbox.request.CreateModelRequest;
-import io.machinebox.classificationbox.response.CreateModelResponse;
 import io.machinebox.classificationbox.response.UploadStateResponse;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -11,21 +8,18 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okio.BufferedSink;
 import okio.Okio;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import retrofit2.Response;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
-import static org.hamcrest.collection.IsMapContaining.hasEntry;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsMapContaining.hasEntry;
 import static org.junit.Assert.assertFalse;
 
 public class StateIntegrationTest extends AbstractIntegrationTest {
@@ -34,30 +28,6 @@ public class StateIntegrationTest extends AbstractIntegrationTest {
 
     @Rule
     public TemporaryFolder testFolder = new TemporaryFolder();
-
-    @Before
-    public void setUpModel() throws IOException {
-
-        List<String> classes = new ArrayList<String>();
-        classes.add("class1");
-        classes.add("class2");
-        classes.add("class3");
-
-        CreateModelRequest cmr = new CreateModelRequest(TEST_MODEL_NAME, classes)
-                .withId(TEST_MODEL_ID)
-                .addOption(ModelOption.NGRAMS, 1)
-                .addOption(ModelOption.SKIPGRAMS, 1);
-
-        Response<CreateModelResponse> response = getClient().service().createModel(cmr).execute();
-        assertTrue(response.isSuccessful());
-
-    }
-
-    @After
-    public void tearDownModel() throws IOException {
-        Response<Void> response = getClient().service().deleteModel(TEST_MODEL_ID).execute();
-        assertTrue(response.isSuccessful());
-    }
 
     @Test
     public void testDownloadUploadState() throws IOException {
